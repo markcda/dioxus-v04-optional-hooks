@@ -1,0 +1,9 @@
+[package]
+name = "dioxus-v04-optional-hooks"
+version = "0.1.0"
+edition = "2021"
+authors = ["Klimenty Titov <aclo.create@gmail.com>"]
+license = "MIT"
+
+[dependencies]
+dioxus = "0.4"
