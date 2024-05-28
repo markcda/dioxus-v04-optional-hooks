@@ -5,6 +5,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Klimenty Titov <aclo.create@gmail.com>"]
 license = "MIT"
+repository = "https://github.com/markcda/dioxus-v04-optional-hooks"
 
 [dependencies]
 dioxus = "0.4"
