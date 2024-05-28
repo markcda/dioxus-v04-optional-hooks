@@ -1,7 +1,7 @@
 [package]
 name = "dioxus-v04-optional-hooks"
 description = "Optional futures for Dioxus 0.4.0-0.4.3"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Klimenty Titov <aclo.create@gmail.com>"]
 license = "MIT"
