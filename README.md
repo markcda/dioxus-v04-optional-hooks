@@ -6,6 +6,7 @@ Simplifies future hooks that should be reusable.
 
 ```rust
 use dioxus_v04_optional_hooks::{FutureHook, StartupGuard};
+use dioxus::prelude::*;
 
 ...
 
