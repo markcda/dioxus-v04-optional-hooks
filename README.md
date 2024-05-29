@@ -17,8 +17,8 @@ let get_project_card_fut = FutureHook::new(cx, StartupGuard::Enable, (project_se
 ...
 
 cx.render({
-    hx.get_project_card_fut.fetch();
-    if let Some(project_card) = hx.get_project_card_fut.read_clone(false) {
+    get_project_card_fut.fetch();
+    if let Some(project_card) = get_project_card_fut.read_clone(false) {
         ...
     }
 })
