@@ -142,7 +142,7 @@ impl<'a, T, E> FutureHook<'a, T, E>
   }
 
   /// Clones outdated marker to use into closures.
-  pub fn get_outdated_marker(&self) -> UseState<bool> {
-    self.outdated_marker.to_owned()
+  pub fn get_outdated_marker(&self) -> &'a UseState<bool> {
+    &self.outdated_marker
   }
 }
