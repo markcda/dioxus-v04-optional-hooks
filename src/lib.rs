@@ -38,7 +38,7 @@ impl<'a, T, E> FutureHook<'a, T, E>
   /// Creates new optional future.
   ///
   /// Example:
-  /// ```rust
+  /// ```rust,ignore
   /// use dioxus_v04_optional_hooks::{FutureHook, StartupGuard};
   /// ...
   /// let generate_fut = FutureHook::new(cx, StartupGuard::Enable, (dependency_state_hook,) |(dependency_state_hook,)| {
