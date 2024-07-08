@@ -6,8 +6,8 @@ use dioxus::prelude::*;
 #[derive(Copy, Clone)]
 pub struct FutureHook<'a, T, E>
   where
-    T: 'static + Clone,
-    E: 'static + Clone + Debug,
+    T: 'static + ?Sized + Clone,
+    E: 'static + ?Sized + Clone + Debug,
 {
   future: &'a UseFuture<Result<T, E>>,
   outdated_marker: &'a UseState<bool>,
