@@ -3,7 +3,7 @@ use std::future::Future;
 use dioxus::prelude::*;
 
 /// Optional future hook.
-#[derive(Copy, Clone)]
+#[derive(Clone)]
 pub struct FutureHook<'a, T, E>
   where
     T: 'static + ?Sized + Clone,
@@ -12,6 +12,8 @@ pub struct FutureHook<'a, T, E>
   future: &'a UseFuture<Result<T, E>>,
   outdated_marker: &'a UseState<bool>,
 }
+
+impl<'a, T: ?Sized + Clone, E: ?Sized + Clone + Debug> Copy for FutureHook<'a, T, E> {}
 
 #[derive(PartialEq, Eq)]
 pub enum FutureState {
