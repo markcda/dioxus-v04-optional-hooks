@@ -4,7 +4,7 @@ Simplifies future hooks that should be reusable.
 
 ## Usage
 
-```rust
+```rust,ignore
 use dioxus_v04_optional_hooks::{FutureHook, StartupGuard};
 use dioxus::prelude::*;
 
@@ -18,7 +18,7 @@ let get_project_card_fut = FutureHook::new(cx, StartupGuard::Enable, (project_se
 ...
 
 cx.render({
-    get_project_card_fut.fetch();
+    get_project_card_fut.lazy_fetch();
     if let Some(project_card) = get_project_card_fut.read_clone(false) {
         ...
     }
