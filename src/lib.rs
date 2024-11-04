@@ -132,6 +132,19 @@ impl<'a, T, E> FutureHook<'a, T, E>
   pub fn fetch(&self) {
     if self.is_outdated() { self.restart(); }
   }
+  
+  /// Restarts the future only if it's not `Ready`, even if it's marked as outdated.
+  /// 
+  /// Dioxus's mechanism exposed to be state-dependable, and if state is updated, future updates whenever it's fetched or not.
+  /// To avoid the starting of future twice, `lazy_fetch` marks the hook as not outdated if it has the value.
+  pub fn lazy_fetch(&self) {
+    if self.is_outdated() {
+      self.outdated_marker.set(false);
+      self.restart();
+    } else {
+      self.fetch();
+    }
+  }
 
   /// Checks if the future is outdated.
   pub fn is_outdated(&self) -> bool {
